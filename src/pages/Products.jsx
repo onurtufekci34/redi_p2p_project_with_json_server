@@ -70,7 +70,7 @@ export default function Products(props) {
               <input
                 className="w-25 align-self-center fs-3 text-center"
                 type="number"
-                name="number"
+                name="number" 
                 min="1"
                 value={productQuantities[item.id] !== undefined ? productQuantities[item.id] : 1}
 
