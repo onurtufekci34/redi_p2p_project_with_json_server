@@ -197,7 +197,11 @@ const ProduktDashboard = () => {
           </div>
                 <h5 className="card-title text-truncate">{product.title}</h5>
                 <p className="card-text text-truncate">{product.description}</p>
+                <div className='d-flex justify-content-between'>
                 <p className="card-text">{product.category}</p>
+                <p className="card-text fs-5 text-danger">{product.price}€</p>
+                </div>
+                
                 <button className="btn btn-danger me-2" onClick={() => deleteProduct(product.id)}>Delete</button>
                 <button className="btn btn-primary" onClick={() => handleEditProduct(product)}>Edit</button>
               </div>
