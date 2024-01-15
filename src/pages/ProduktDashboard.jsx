@@ -123,6 +123,7 @@ const ProduktDashboard = () => {
 
   const handleEditProduct = (product) => {
     setEditingProduct({ ...product });
+    window.scrollTo(0, 0);
   };
 
   const updateProduct = async () => {
