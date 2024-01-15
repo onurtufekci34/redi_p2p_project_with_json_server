@@ -265,7 +265,7 @@ function App() {
             />
           }
         />
-        <Route path="dashboard" element={<ProduktDashboard initialProducts={initialProducts}/>}/>
+        <Route path="dashboard" element={<ProduktDashboard/>}/>
         <Route path="*" element={<NotFound />} />
       </Route>
     )

@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 
-const ProduktDashboard = ({ initialProducts }) => {
-  const [products, setProducts] = useState(initialProducts);
+const ProduktDashboard = () => {
+  const [products, setProducts] = useState([]);
   const [newProduct, setNewProduct] = useState({
     title: '',
     price: 0,
@@ -17,6 +17,25 @@ const ProduktDashboard = ({ initialProducts }) => {
     category: '',
     image: '',
   });
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:3000/products");
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+        //console.log(data)
+        setProducts(data);
+        //console.log(initialProducts)
+      } catch (error) {
+        console.error("There was a problem fetching the data: ", error);
+      }
+    };
+  
+    fetchData();
+  }, []);
   
 
   const addProduct = async (event) => {
