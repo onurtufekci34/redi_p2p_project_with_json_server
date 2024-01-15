@@ -151,7 +151,7 @@ const ProduktDashboard = () => {
         console.error("Failed to update product. Server returned an error.");
       }
     } catch (error) {
-      console.error("Error sending PUT/PATCH request:", error);
+      console.error("Error sending PUT request:", error);
     }
   };
 
