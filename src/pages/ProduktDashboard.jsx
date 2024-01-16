@@ -127,7 +127,7 @@ const ProduktDashboard = () => {
   };
 
   const updateProduct = async () => {
-    // Send a PUT or PATCH request to your API endpoint
+    // Send a PUT  request to your API endpoint
     try {
       const response = await fetch(
         `http://localhost:3000/products/${editingProduct.id}`,
@@ -145,7 +145,7 @@ const ProduktDashboard = () => {
         const updatedProducts = products.map((product) =>
           product.id === editingProduct.id ? editingProduct : product
         );
-        console.log(updatedProducts);
+        //console.log(updatedProducts);
         setProducts(updatedProducts);
         setEditingProduct(null);
       } else {
